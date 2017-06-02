@@ -1,0 +1,8 @@
+import math
+def f1(x):
+    f1 = math.tan(x)
+return f1
+def f2(x):
+    f2 = 2*
+return f2
+while(f1.f2<=0):

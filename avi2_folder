@@ -1,0 +1,16 @@
+#include<iostream>
+
+using namespace std;
+
+ int main() {
+int N = 0, max=x;
+cin >> N;   //Number of inputs
+while (N += N+1){
+      cout << "Repeat the system" << endl;
+      N <= x
+      cout << "The maximum value:" << N << endl;
+}
+   cout << " x is the maximum " << endl;
+return 0;
+}
+
