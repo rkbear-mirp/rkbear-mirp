@@ -14,30 +14,31 @@ int X2=A3;
 int X;int Y;
 TouchScreen ts=TouchScreen(X1,Y1,X2,Y2,711);
 //for PID control
-double setpointx=514;
- double setpointy=484;
+double setpointx=545;
+ double setpointy=489;
 double inputx,outputx;
 double  inputy,outputy;
-double kp=0.06;
-double ki=0.08;
-double kd=0.07;
+double kp=0.1;
+double ki=0.06;
+double kd=0.03;
 PID PIDx(&inputx,&outputx,&setpointx,kp,ki,kd,REVERSE);
 PID PIDy(&inputy,&outputy,&setpointy,kp,ki,kd,REVERSE); 
 int mn=60,mx=120;
 void setup() {
  // Serial.begin(9600);
- //for servo
+ //for PID
+PIDx.SetMode(AUTOMATIC);
+PIDx.SetOutputLimits(mn,mx);
+PIDx.SetSampleTime(15);
+PIDy.SetMode(AUTOMATIC);
+PIDy.SetOutputLimits(mn,mx);
+PIDy.SetSampleTime(15);
+delay(40);
+//for servo
 ServoX.attach(xServoPin);
 ServoY.attach(yServoPin);
 ServoX.write(90);
 ServoY.write(90);
-//for PID
-PIDx.SetMode(AUTOMATIC);
-PIDx.SetOutputLimits(mn,mx);
-delay(40);
-PIDy.SetMode(AUTOMATIC);
-PIDy.SetOutputLimits(mn,mx);
-delay(40);
 
 
 
